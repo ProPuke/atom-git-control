@@ -3,24 +3,15 @@
 .git-control .menu {
   border-bottom: 1px solid @base-border-color;
   background: inherit;
+  margin-left: 0;
+  padding: @component-padding/2 @component-padding/2 0 0;
+
+  .btn-group {
+    margin-bottom: @component-padding/2;
+  }
 
   .item {
-    display: inline-block;
-    margin: 5px 0 5px 5px;
     padding: 5px;
-    cursor: pointer;
-    border-radius: 4px;
-    -webkit-user-select: none;
-
-    &:hover {
-      color: @text-color-highlight;
-    }
-
-    &.inactive, &.inactive:hover {
-      opacity: .5;
-      pointer-events: none;
-      cursor: default;
-    }
 
     &.hide {
       display: none;
