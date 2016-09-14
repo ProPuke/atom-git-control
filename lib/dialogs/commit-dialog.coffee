@@ -13,7 +13,7 @@ class CommitDialog extends Dialog
       @div class: 'buttons', =>
         @button class: 'btn btn-primary inline-block-tight icon commit', click: 'commit', =>
           @text 'Commit'
-        @button click: 'inline-block-tight icon x', click: 'cancel', =>
+        @button click: 'btn inline-block-tight icon x', click: 'cancel', =>
           @text 'Cancel'
 
   activate: ->
