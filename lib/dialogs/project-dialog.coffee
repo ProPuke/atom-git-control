@@ -14,12 +14,10 @@ class ProjectDialog extends Dialog
         @label 'Current Project'
         @select class: 'input-select', outlet: 'projectList'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'changeProject', =>
-          @i class: 'icon icon-repo-pull'
-          @span 'Change'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon icon-repo-pull', click: 'changeProject', =>
+          @text 'Change'
+        @button class: 'btn icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   activate: ->
     projectIndex = 0

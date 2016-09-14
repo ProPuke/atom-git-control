@@ -9,15 +9,12 @@ class PushTagsDialog extends Dialog
         @i class: 'icon x clickable',click: 'cancel'
         @strong 'Push Tags'
       @div class: 'body', =>
-        @button class: 'active', click: 'ptago',=>
-          @i class: 'icon versions'
-          @span 'Push tags to origin'
-        @button class: 'active', click: 'ptagup',=>
-          @i class: 'icon versions'
-          @span 'Push tags to upstream'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon versions', click: 'ptago',=>
+          @text 'Push tags to origin'
+        @button class: 'btn btn-primary inline-block-tight icon versions', click: 'ptagup',=>
+          @text 'Push tags to upstream'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'Cancel'
 
 
   ptago: ->

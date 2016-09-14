@@ -9,10 +9,9 @@ class PushDialog extends Dialog
         @i class: 'icon x clickable',click: 'cancel'
         @strong 'Push'
       @div class: 'body', =>
-        @div =>
-          @button click: 'upstream',=>
-            @p 'Push upstream', =>
-              @i class: 'icon push'
+        @p =>
+          @button class: 'btn btn-primary icon push', click: 'upstream', =>
+            @text 'Push upstream'
         @label 'Push from branch'
         @input class: 'input-text native-key-bindings',readonly: true,outlet: 'fromBranch'
         @label 'To branch'
@@ -21,12 +20,10 @@ class PushDialog extends Dialog
           @input class: 'input-checkbox', type: 'checkbox', outlet: 'force'
           @text 'Force Push'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'push', =>
-          @i class: 'icon push'
-          @span 'Push'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon push', click: 'push', =>
+          @text 'Push'
+        @button class: 'btn icon x' ,click: 'cancel', =>
+          @text 'Cancel'
 
   activate: (remotes) ->
     @fromBranch.val(git.getLocalBranch())

@@ -10,15 +10,12 @@ class DeleteDialog extends Dialog
       @div class: 'body', =>
         @div params.msg
       @div class: 'buttons', =>
-        @button class: 'active', click: 'delete', =>
-          @i class: 'icon check'
-          @span 'Yes'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'No'
-        @button class: 'warningText', click: 'forceDelete', =>
-            @i class: 'icon trash'
-            @span  'FORCE DELETE'
+        @button class: 'btn btn-primary inline-block-tight icon check', click: 'delete', =>
+          @text 'Yes'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'No'
+        @button class: 'btn btn-warning inline-block-tight icon trash', click: 'forceDelete', =>
+          @text  'FORCE DELETE'
 
   initialize: (params) ->
     @params = params

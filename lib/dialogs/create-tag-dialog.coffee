@@ -15,12 +15,10 @@ class CreateTagDialog extends Dialog
         @label 'Tag Message'
         @textarea class: 'input-textarea native-key-bindings', outlet: 'msg'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'tag', =>
-          @i class: 'icon tag'
-          @span 'Create Tag'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon tag', click: 'tag', =>
+          @text 'Create Tag'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   tag: ->
     @deactivate()

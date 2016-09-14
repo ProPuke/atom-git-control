@@ -18,12 +18,10 @@ class MergeDialog extends Dialog
           @input class: 'input-checkbox', type: 'checkbox', outlet: 'noff'
           @text 'No Fast-Forward'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'merge', =>
-          @i class: 'icon merge'
-          @span 'Merge'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon merge', click: 'merge', =>
+          @text 'Merge'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   activate: (branches) ->
     current = git.getLocalBranch()

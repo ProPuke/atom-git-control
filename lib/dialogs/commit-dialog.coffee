@@ -11,12 +11,10 @@ class CommitDialog extends Dialog
         @label 'Commit Message'
         @textarea class: 'input-textarea native-key-bindings', outlet: 'msg', keyUp: 'colorLength'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'commit', =>
-          @i class: 'icon commit'
-          @span 'Commit'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon commit', click: 'commit', =>
+          @text 'Commit'
+        @button click: 'inline-block-tight icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   activate: ->
     @msg.val('')

@@ -15,12 +15,10 @@ class BranchDialog extends Dialog
         @label 'New Branch'
         @input class: 'input-text native-key-bindings', type: 'text', outlet: 'toBranch'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'branch', =>
-          @i class: 'icon branch'
-          @span 'Branch'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon branch', click: 'branch', =>
+          @text 'Branch'
+        @button class: 'btn icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   activate: ->
     @fromBranch.val(git.getLocalBranch())

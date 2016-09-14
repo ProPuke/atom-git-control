@@ -20,12 +20,10 @@ class MidrebaseDialog extends Dialog
           @input class: 'input-radio', type: 'radio', outlet: 'skip'
           @text 'Skip the patch'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'midrebase', =>
-          @i class: 'icon circuit-board'
-          @span 'Rebase'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon circuit-board', click: 'midrebase', =>
+          @text 'Rebase'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   midrebase: ->
     @deactivate()

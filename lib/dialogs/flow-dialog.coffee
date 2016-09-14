@@ -22,12 +22,10 @@ class FlowDialog extends Dialog
           @input class: 'input-checkbox native-key-bindings', type: 'checkbox', outlet: 'noTag', id: 'noTag'
           @text 'No Tag'
       @div class: 'buttons', =>
-        @button class: 'active', click: 'flow', =>
-          @i class: 'icon flow'
-          @span 'Ok'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon flow', click: 'flow', =>
+          @text 'Ok'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   activate: (branches) ->
     current = git.getLocalBranch()

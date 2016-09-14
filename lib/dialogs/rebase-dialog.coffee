@@ -16,12 +16,10 @@ class RebaseDialog extends Dialog
         @select class: 'input-select native-key-bindings', outlet: 'fromBranch'
 
       @div class: 'buttons', =>
-        @button class: 'active', click: 'rebase', =>
-          @i class: 'icon circuit-board'
-          @span 'Rebase'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'Cancel'
+        @button class: 'btn btn-primary inline-block-tight icon circuit-board', click: 'rebase', =>
+          @text 'Rebase'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'Cancel'
 
   activate: (branches) ->
     current = git.getLocalBranch()

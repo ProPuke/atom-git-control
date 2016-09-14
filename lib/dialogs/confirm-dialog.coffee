@@ -10,12 +10,10 @@ class ConfirmDialog extends Dialog
       @div class: 'body', =>
         @div params.msg
       @div class: 'buttons', =>
-        @button class: 'active', click: 'confirm', =>
-          @i class: 'icon check'
-          @span 'Yes'
-        @button click: 'cancel', =>
-          @i class: 'icon x'
-          @span 'No'
+        @button class: 'btn btn-primary inline-block-tight icon check', click: 'confirm', =>
+          @text 'Yes'
+        @button class: 'btn inline-block-tight icon x', click: 'cancel', =>
+          @text 'No'
 
   initialize: (params) ->
     @params = params
