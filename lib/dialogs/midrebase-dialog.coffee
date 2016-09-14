@@ -5,7 +5,7 @@ git = require '../git'
 module.exports =
 class MidrebaseDialog extends Dialog
   @content: ->
-    @div class: 'dialog', =>
+    @div class: 'git-control dialog', =>
       @div class: 'heading', =>
         @i class: 'icon x clickable', click: 'cancel'
         @strong 'It appears that you are in the middle of a rebase, would you like to:'

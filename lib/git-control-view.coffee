@@ -34,7 +34,7 @@ gitWorkspaceTitle = ''
 
 module.exports =
 class GitControlView extends View
-  @content: ->
+  @content: =>
     if git.isInitialised()
       @div class: 'git-control', =>
         @subview 'menuView', new MenuView()
@@ -45,16 +45,6 @@ class GitControlView extends View
             @subview 'remoteBranchView', new BranchView(name: 'Remote')
           @div class: 'domain', =>
             @subview 'diffView', new DiffView()
-          @subview 'projectDialog', new ProjectDialog()
-          @subview 'branchDialog', new BranchDialog()
-          @subview 'commitDialog', new CommitDialog()
-          @subview 'createtagDialog', new CreateTagDialog()
-          @subview 'mergeDialog', new MergeDialog()
-          @subview 'flowDialog', new FlowDialog()
-          @subview 'pushDialog', new PushDialog()
-          @subview 'pushtagDialog', new PushTagsDialog()
-          @subview 'rebaseDialog', new RebaseDialog()
-          @subview 'midrebaseDialog', new MidrebaseDialog()
         @subview 'logView', new LogView()
     else #This is so that no error messages can be created by pushing buttons that are unavailable.
       @div class: 'git-control', =>
@@ -75,6 +65,18 @@ class GitControlView extends View
     else
       @setWorkspaceTitle(git.getRepository().path.split('/').reverse()[1])
     @update(true)
+
+    if git.isInitialised()
+      @projectDialog = new ProjectDialog this
+      @branchDialog = new BranchDialog this
+      @commitDialog = new CommitDialog this
+      @createtagDialog = new CreateTagDialog this
+      @mergeDialog = new MergeDialog this
+      @flowDialog = new FlowDialog this
+      @pushDialog = new PushDialog this
+      @pushtagDialog = new PushTagsDialog this
+      @rebaseDialog = new RebaseDialog this
+      @midrebaseDialog = new MidrebaseDialog this
 
     return
 

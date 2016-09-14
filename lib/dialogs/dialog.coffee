@@ -2,12 +2,19 @@
 
 module.exports =
 class Dialog extends View
+  constructor: (parentView) ->
+    super()
+    @parentView = parentView
+
   activate: ->
-    @addClass('active')
+    if !@modal
+      @modal = atom.workspace.addModalPanel item:this[0], visible:true
+    else
+      @modal.show()
     return
 
   deactivate: ->
-    @removeClass('active')
+    @modal?.hide()
     return
 
   cancel: ->

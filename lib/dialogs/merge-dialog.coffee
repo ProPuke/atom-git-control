@@ -5,7 +5,7 @@ git = require '../git'
 module.exports =
 class MergeDialog extends Dialog
   @content: ->
-    @div class: 'dialog', =>
+    @div class: 'git-control dialog', =>
       @div class: 'heading', =>
         @i class: 'icon x clickable', click: 'cancel'
         @strong 'Merge'

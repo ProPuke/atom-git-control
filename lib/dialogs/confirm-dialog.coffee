@@ -3,7 +3,7 @@ Dialog = require './dialog'
 module.exports =
 class ConfirmDialog extends Dialog
   @content: (params) ->
-    @div class: 'dialog active', =>
+    @div class: 'git-control dialog', =>
       @div class: 'heading', =>
         @i class: 'icon x clickable', click: 'cancel'
         @strong params.hdr
