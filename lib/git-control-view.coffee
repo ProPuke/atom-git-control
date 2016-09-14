@@ -189,12 +189,14 @@ class GitControlView extends View
     forceDeleteCallback = (params) =>
       git.forceDeleteBranch(params.branch).then => @update()
 
-    @contentView.append new DeleteDialog
+    dialog = new DeleteDialog this,
       hdr: 'Delete Branch'
       msg: "Are you sure you want to delete the local branch '#{branch}'?"
       cb: confirmCb
       fdCb: forceDeleteCallback
       branch: branch
+    dialog.activate()
+
     return
 
   fetchMenuClick: ->

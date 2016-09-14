@@ -3,7 +3,7 @@
 module.exports =
 class Dialog extends View
   constructor: (parentView) ->
-    super()
+    Dialog.__super__.constructor.apply this, (Array.prototype.slice.call arguments, 1)
     @parentView = parentView
 
   activate: ->
