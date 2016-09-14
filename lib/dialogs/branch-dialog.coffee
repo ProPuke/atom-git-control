@@ -11,9 +11,9 @@ class BranchDialog extends Dialog
         @strong 'Branch'
       @div class: 'body', =>
         @label 'Current Branch'
-        @input class: 'native-key-bindings', type: 'text', readonly: true, outlet: 'fromBranch'
+        @input class: 'input-text native-key-bindings', type: 'text', readonly: true, outlet: 'fromBranch'
         @label 'New Branch'
-        @input class: 'native-key-bindings', type: 'text', outlet: 'toBranch'
+        @input class: 'input-text native-key-bindings', type: 'text', outlet: 'toBranch'
       @div class: 'buttons', =>
         @button class: 'active', click: 'branch', =>
           @i class: 'icon branch'

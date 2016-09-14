@@ -11,10 +11,10 @@ class RebaseDialog extends Dialog
         @strong 'Rebase'
       @div class: 'body', =>
         @label 'Current Branch'
-        @input class: 'native-key-bindings', type: 'text', readonly: true, outlet: 'toBranch'
+        @input class: 'input-text native-key-bindings', type: 'text', readonly: true, outlet: 'toBranch'
         @label 'Rebase On Branch'
-        @select class: 'native-key-bindings', outlet: 'fromBranch'
-        
+        @select class: 'input-select native-key-bindings', outlet: 'fromBranch'
+
       @div class: 'buttons', =>
         @button class: 'active', click: 'rebase', =>
           @i class: 'icon circuit-board'

@@ -11,15 +11,16 @@ class FlowDialog extends Dialog
         @strong 'Workflow - GitFlow'
       @div class: 'body', =>
         @label 'Git Flow '
-        @select class: 'native-key-bindings', outlet: 'flowType', change: 'flowTypeChange'
-        @select class: 'native-key-bindings', outlet: 'flowAction', change: 'flowActionChange'
+        @select class: 'input-select native-key-bindings', outlet: 'flowType', change: 'flowTypeChange'
+        @select class: 'input-select native-key-bindings', outlet: 'flowAction', change: 'flowActionChange'
         @label 'Branch Name:', outlet: 'labelBranchName'
-        @input class: 'native-key-bindings', type: 'text', outlet: 'branchName'
-        @select class: 'native-key-bindings', outlet: 'branchChoose'
+        @input class: 'input-text native-key-bindings', type: 'text', outlet: 'branchName'
+        @select class: 'input-select native-key-bindings', outlet: 'branchChoose'
         @label 'Message:', outlet: 'labelMessage'
-        @textarea class: 'native-key-bindings', outlet: 'message'
-        @input class: 'native-key-bindings', type: 'checkbox', outlet: 'noTag', id: 'noTag'
-        @label 'No Tag', outlet: 'labelNoTag', for: 'noTag'
+        @textarea class: 'input-textarea native-key-bindings', outlet: 'message'
+        @label class: 'input-label', outlet: 'labelNoTag', =>
+          @input class: 'input-checkbox native-key-bindings', type: 'checkbox', outlet: 'noTag', id: 'noTag'
+          @text 'No Tag'
       @div class: 'buttons', =>
         @button class: 'active', click: 'flow', =>
           @i class: 'icon flow'
@@ -80,10 +81,8 @@ class FlowDialog extends Dialog
 
   checkNoTagNeeded: ->
     if(@flowAction.val() == "finish" && (@flowType.val() == "release" || @flowType.val() == "hotfix" ) )
-      @noTag.show()
       @labelNoTag.show()
     else
-      @noTag.hide()
       @labelNoTag.hide()
     return
 

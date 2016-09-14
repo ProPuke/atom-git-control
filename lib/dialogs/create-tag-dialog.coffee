@@ -9,11 +9,11 @@ class CreateTagDialog extends Dialog
         @strong 'Tag'
       @div class: 'body', =>
         @label 'Tag name'
-        @input class: 'native-key-bindings', type: 'text', outlet: 'name'
+        @input class: 'input-text native-key-bindings', type: 'text', outlet: 'name'
         @label 'commit ref'
-        @input class: 'native-key-bindings', type: 'text', outlet: 'href'
+        @input class: 'input-text native-key-bindings', type: 'text', outlet: 'href'
         @label 'Tag Message'
-        @textarea class: 'native-key-bindings', outlet: 'msg'
+        @textarea class: 'input-textarea native-key-bindings', outlet: 'msg'
       @div class: 'buttons', =>
         @button class: 'active', click: 'tag', =>
           @i class: 'icon tag'

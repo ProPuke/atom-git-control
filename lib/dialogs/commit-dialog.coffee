@@ -9,7 +9,7 @@ class CommitDialog extends Dialog
         @strong 'Commit'
       @div class: 'body', =>
         @label 'Commit Message'
-        @textarea class: 'native-key-bindings', outlet: 'msg', keyUp: 'colorLength'
+        @textarea class: 'input-textarea native-key-bindings', outlet: 'msg', keyUp: 'colorLength'
       @div class: 'buttons', =>
         @button class: 'active', click: 'commit', =>
           @i class: 'icon commit'

@@ -11,12 +11,12 @@ class MergeDialog extends Dialog
         @strong 'Merge'
       @div class: 'body', =>
         @label 'Current Branch'
-        @input class: 'native-key-bindings', type: 'text', readonly: true, outlet: 'toBranch'
+        @input class: 'input-text native-key-bindings', type: 'text', readonly: true, outlet: 'toBranch'
         @label 'Merge From Branch'
-        @select class: 'native-key-bindings', outlet: 'fromBranch'
-        @div =>
-          @input type: 'checkbox',class: 'checkbox',outlet: 'noff'
-          @label 'No Fast-Forward'
+        @select class: 'input-select native-key-bindings', outlet: 'fromBranch'
+        @label class: 'input-label', =>
+          @input class: 'input-checkbox', type: 'checkbox', outlet: 'noff'
+          @text 'No Fast-Forward'
       @div class: 'buttons', =>
         @button class: 'active', click: 'merge', =>
           @i class: 'icon merge'

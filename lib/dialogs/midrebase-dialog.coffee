@@ -10,14 +10,15 @@ class MidrebaseDialog extends Dialog
         @i class: 'icon x clickable', click: 'cancel'
         @strong 'It appears that you are in the middle of a rebase, would you like to:'
       @div class: 'body', =>
-        @label 'Continue the rebase'
-        @input type: 'checkbox',class: 'checkbox',outlet: 'contin'
-        @div =>
-          @label 'Abort the rebase'
-          @input type: 'checkbox',class: 'checkbox',outlet: 'abort'
-        @div =>
-          @label 'Skip the patch'
-          @input type: 'checkbox',class: 'checkbox',outlet: 'skip'
+        @label class: 'input-label', =>
+          @input class: 'input-radio', type: 'radio', outlet: 'contin'
+          @text 'Continue the rebase'
+        @label class: 'input-label', =>
+          @input class: 'input-radio', type: 'radio', outlet: 'abort', checked: true
+          @text 'Abort the rebase'
+        @label class: 'input-label', =>
+          @input class: 'input-radio', type: 'radio', outlet: 'skip'
+          @text 'Skip the patch'
       @div class: 'buttons', =>
         @button class: 'active', click: 'midrebase', =>
           @i class: 'icon circuit-board'

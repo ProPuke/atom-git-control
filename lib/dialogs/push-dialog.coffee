@@ -14,12 +14,12 @@ class PushDialog extends Dialog
             @p 'Push upstream', =>
               @i class: 'icon push'
         @label 'Push from branch'
-        @input class: 'native-key-bindings',readonly: true,outlet: 'fromBranch'
+        @input class: 'input-text native-key-bindings',readonly: true,outlet: 'fromBranch'
         @label 'To branch'
-        @select class: 'native-key-bindings',outlet: 'toBranch'
-        @div =>
-          @label 'Force Push'
-          @input type: 'checkbox',class: 'checkbox',outlet: 'force'
+        @select class: 'input-select native-key-bindings',outlet: 'toBranch'
+        @label class: 'input-label', =>
+          @input class: 'input-checkbox', type: 'checkbox', outlet: 'force'
+          @text 'Force Push'
       @div class: 'buttons', =>
         @button class: 'active', click: 'push', =>
           @i class: 'icon push'
